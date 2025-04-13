@@ -9,17 +9,14 @@ setInterval(() => {
     let min = time.getMinutes();
     let sec = time.getSeconds();
 
-    // Convert 24-hour time to 12-hour format
     hour = hour % 12;
 
-    // Calculate rotation degrees
-    let hourDeg = (hour * 30) + (min * 0.5);      // 30° per hour, 0.5° per minute
-    let minDeg = (min * 6) + (sec * 0.1);         // 6° per minute, 0.1° per second
-    let secDeg = sec * 6;                         // 6° per second
+    let hourDeg = (hour * 30) + (min * 0.5);     
+    let minDeg = (min * 6) + (sec * 0.1);         
+    let secDeg = sec * 6;                       
 
-    // Apply rotation
     hourTip.style.transform = `rotate(${hourDeg}deg) scaleY(.6)`;
     minTip.style.transform = `rotate(${minDeg}deg) scaleY(.75)`;
     secTip.style.transform = `rotate(${secDeg}deg) scaleY(.8)`;
 
-}, 1000); // Update every second
+}, 1000); 
